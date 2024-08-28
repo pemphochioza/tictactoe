@@ -11,12 +11,14 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    //stops the same square from being played twice
     if(squares[i]){
       return;
     }
 
     const nextSquares = squares.slice();
 
+    //switches between playing an X and an O
     if(xIsNext){
       nextSquares[i] = "X";
     }
